@@ -1,0 +1,31 @@
+carpentry: 'incubator'
+title: 'Cloud Storage Integration with rclone — Pomona College HPC Workshop Series'
+description: 'Connecting Sagehen to Box and OneDrive with rclone: configuring remotes, syncing safely and automating transfers inside jobs.'
+created: '2026-03-05'
+license: 'CC-BY 4.0'
+contact: 'its-hpc@pomona.edu'
+source: 'https://github.com/Pomona-College/hpc-cloud-storage-rclone'
+url: 'https://pomona-college.github.io/hpc-cloud-storage-rclone/'
+branch: 'main'
+life_cycle: 'stable'
+keywords: 'Pomona College, HPC, research computing, cloud storage, rclone, Box, OneDrive, data management, syncing'
+episodes:
+- 01-why-cloud-storage.md
+- 02-installing-configuring-rclone.md
+- 03-setting-up-box.md
+- 04-setting-up-onedrive.md
+- 05-copying-files.md
+- 06-listing-inspecting.md
+- 07-syncing-basics.md
+- 08-advanced-sync-workflows.md
+- 09-automating-with-cron.md
+- 10-slurm-integration.md
+- 11-token-management.md
+- 12-troubleshooting-best-practices.md
+learners:
+- setup.md
+- reference.md
+instructors:
+- instructor-notes.md
+profiles:
+- learner-profiles.md
