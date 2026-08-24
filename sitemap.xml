@@ -46,6 +46,12 @@
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/images.html</loc>
+  </url>
+  <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/index.html</loc>
   </url>
   <url>
@@ -94,10 +100,19 @@
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/index.html</loc>
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/learner-profiles.html</loc>
@@ -113,6 +128,9 @@
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/key-points.html</loc>
   </url>
   <url>
     <loc>https://pomona-college.github.io/hpc-cloud-storage-rclone/learner-profiles.html</loc>
