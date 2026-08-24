@@ -69,4 +69,4 @@ If you encounter issues during this workshop:
 - **OneDrive setup only**: ~1 hour
 - **Individual episodes**: 20-45 minutes each
 
-Let's get started! Begin with [Episode 1: Why Cloud Storage Integration Matters](01-why-cloud-storage.md).
+Let's get started! Begin with [Episode 1: Why Cloud Storage Integration Matters](episodes/01-why-cloud-storage.md).

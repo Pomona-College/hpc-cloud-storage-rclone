@@ -22,14 +22,20 @@ By the end of this workshop, you will be able to:
 
 ## Quick Navigation
 
-| Episode | Topic | Duration | Type |
-|---------|-------|----------|------|
-| [01](episodes/01-why-cloud-storage.md) | Why Cloud Storage Integration Matters | 20 min | Teaching + Challenges |
-| [02](episodes/02-rclone-setup-box.md) | Setting Up rclone with Box at Pomona | 30 min | Demo + Hands-on |
-| [03](episodes/03-rclone-setup-onedrive.md) | Setting Up rclone with OneDrive at Pomona | 30 min | Demo + Hands-on |
-| [04](episodes/04-basic-operations.md) | Basic rclone Operations and Commands | 35 min | Demo + Practice |
-| [05](episodes/05-syncing-workflows.md) | Syncing Workflows: Copy vs Sync | 45 min | Concepts + Workflows |
-| [06](episodes/06-automation-maintenance.md) | Automation and Token Maintenance | 35 min | Advanced Topics |
+| Episode | Topic | Duration |
+|---------|-------|----------|
+| [01](episodes/01-why-cloud-storage.md) | Why Cloud Storage Integration Matters | 15 min |
+| [02](episodes/02-installing-configuring-rclone.md) | Installing and Configuring rclone | 15 min |
+| [03](episodes/03-setting-up-box.md) | Setting Up Pomona Box | 25 min |
+| [04](episodes/04-setting-up-onedrive.md) | Setting Up OneDrive | 25 min |
+| [05](episodes/05-copying-files.md) | Copying Files | 25 min |
+| [06](episodes/06-listing-inspecting.md) | Listing and Inspecting | 20 min |
+| [07](episodes/07-syncing-basics.md) | Syncing Basics | 25 min |
+| [08](episodes/08-advanced-sync-workflows.md) | Advanced Sync Workflows | 25 min |
+| [09](episodes/09-automating-with-cron.md) | Automating with Cron | 20 min |
+| [10](episodes/10-slurm-integration.md) | SLURM Integration | 35 min |
+| [11](episodes/11-token-management.md) | Token Management and Maintenance | 20 min |
+| [12](episodes/12-troubleshooting-best-practices.md) | Troubleshooting and Best Practices | 15 min |
 
 ## For Learners
 
@@ -37,7 +43,7 @@ By the end of this workshop, you will be able to:
 
 1. **Read [the introduction](index.md)** to understand the workshop goals
 2. **Start with [Episode 1](episodes/01-why-cloud-storage.md)** for context
-3. **Follow Episodes 2-3** to set up your cloud storage
+3. **Follow Episodes 3-4** to set up your cloud storage
 4. **Progress through Episodes 4-6** at your own pace
 
 ### Prerequisites
