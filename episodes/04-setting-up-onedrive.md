@@ -27,6 +27,7 @@ exercises: 10
 ## Deciding Between Box and OneDrive
 
 Use OneDrive with rclone if you:
+
 - Want **personal control** over cloud storage
 - Prefer **seamless Office 365 integration**
 - Have smaller-scale data syncing needs
@@ -163,6 +164,7 @@ rclone config show
 ```
 
 You now have:
+
 - `pomona-box:` -- Your institutional Box storage
 - `pomona-onedrive:` -- Your Pomona institutional OneDrive for Business storage (M365)
 
@@ -217,8 +219,6 @@ Seeing storage information (no errors) confirms your `pomona-onedrive` remote is
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Challenge 4.2: Compare Your Remotes
@@ -235,13 +235,13 @@ rclone lsd pomona-onedrive:/
 
 **Compare**: Which remote has more folders? Which do you think you'll use more frequently?
 
+::::::::::::::::::::::::::::::::::::: 
+
 ::::::::::::::::::::::::::::::::::::: solution
 
 ## Solution
 
 OneDrive typically has more default folders (Documents, Downloads, Pictures). Box may have fewer folders if it is new. Use Box for institutional collaboration and OneDrive for personal storage.
-
-::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 

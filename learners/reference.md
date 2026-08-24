@@ -88,34 +88,34 @@ rclone ls --human-readable box-storage:/path/to/folder
 
 **Copy from remote to Sagehen:**
 ```bash
-rclone copy box-storage:/data /rhome/username/data
+rclone copy box-storage:/data /rhome/<myusername>/data
 ```
 
 **Copy from Sagehen to remote:**
 ```bash
-rclone copy /rhome/username/data box-storage:/backup
+rclone copy /rhome/<myusername>/data box-storage:/backup
 ```
 
 **Copy single file:**
 ```bash
-rclone copy box-storage:/results.csv /rhome/username/
+rclone copy box-storage:/results.csv /rhome/<myusername>/
 ```
 
 ### Synchronizing Directories
 
 **One-way sync (remote → local):**
 ```bash
-rclone sync box-storage:/data /rhome/username/data
+rclone sync box-storage:/data /rhome/<myusername>/data
 ```
 
 **One-way sync (local → remote):**
 ```bash
-rclone sync /rhome/username/data box-storage:/backup
+rclone sync /rhome/<myusername>/data box-storage:/backup
 ```
 
 **Check what would be synced (dry-run):**
 ```bash
-rclone sync --dry-run /rhome/username/data box-storage:/backup
+rclone sync --dry-run /rhome/<myusername>/data box-storage:/backup
 ```
 
 ### Mounting Cloud Storage
@@ -139,12 +139,12 @@ fusermount -u ~/box-mount
 
 **Verify copied files match:**
 ```bash
-rclone check box-storage:/data /rhome/username/data
+rclone check box-storage:/data /rhome/<myusername>/data
 ```
 
 **Show differences:**
 ```bash
-rclone check --one-way box-storage:/data /rhome/username/data
+rclone check --one-way box-storage:/data /rhome/<myusername>/data
 ```
 
 ## Common Flags
@@ -187,14 +187,14 @@ rclone config reconnect box-storage
 
 When using rclone on Sagehen, remember storage locations:
 
-- **Personal:** `/rhome/username` (100 GB, backed up)
-- **Lab/Group:** `/bigdata/groupname` (1 TB shared)
+- **Personal:** `/rhome/<myusername>` (100 GB, backed up)
+- **Lab/Group:** `/bigdata/lab/<labname>` (1 TB shared)
 - **Temporary:** `/scratch/username` (no quota, 60-day retention)
 - **Fast Temp:** `/tmpfs` (RAM-based, job duration only)
 
 Example sync to shared lab storage:
 ```bash
-rclone sync box-storage:/results /bigdata/mylab/results
+rclone sync box-storage:/results /bigdata/lab/<labname>/results
 ```
 
 ## Performance Tips
@@ -220,3 +220,6 @@ man rclone
 **HPC Support:**
 - Email: its-hpc@pomona.edu
 - Instructor: Andrew Wilson
+
+<!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
+<script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>

@@ -69,8 +69,13 @@ module load rclone
 If rclone caches a token it thinks is valid but isn't working:
 
 ```bash
-rclone config reconnect pomona-box: --force
+rclone config reconnect pomona-box:
 ```
+
+(There is no `--force` flag on `config reconnect`. If reconnecting doesn't
+clear the problem, delete and recreate the remote: `rclone config delete
+pomona-box`, then run `rclone config` again -- your data on Box is untouched.)
+
 
 ## Monitoring Transfer Logs
 
@@ -131,6 +136,7 @@ crontab -e
 ## Getting Help
 
 For questions or issues:
+
 - **HPC Support**: its-hpc@pomona.edu
 - **rclone Documentation**: https://rclone.org/docs/
 - **Pomona Box Help**: IT Service Desk

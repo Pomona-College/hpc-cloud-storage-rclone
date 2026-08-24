@@ -26,6 +26,12 @@ exercises: 10
 
 A collaborator has shared a large dataset on OneDrive. Download it to Sagehen for processing:
 
+This example uses a second remote named `collaborator-onedrive` -- configured
+with the same `rclone config` process as Episode 3, choosing **onedrive**
+instead of **box**. If you haven't set one up, substitute a remote you do have
+(such as `pomona-box:`) to follow along; otherwise rclone will report
+`didn't find section in config file`.
+
 ```bash
 rclone sync collaborator-onedrive:/large-dataset /scratch/raw-data --dry-run
 ```

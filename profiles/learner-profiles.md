@@ -66,10 +66,10 @@ rclone sync /rhome/schen/ecology_project/results onedrive-storage:/Lab_Results/2
 ```bash
 # Daily backup of all lab outputs from Sagehen to Box
 # (Put in crontab for automated runs)
-rclone copy --progress /bigdata/thompson_lab/outputs box-storage:/Lab_Backups/Daily_Backup_$(date +%Y%m%d)
+rclone copy --progress /bigdata/lab/thompson_lab/outputs box-storage:/Lab_Backups/Daily_Backup_$(date +%Y%m%d)
 
 # Check backup status
-rclone check /bigdata/thompson_lab/outputs box-storage:/Lab_Backups/Latest
+rclone check /bigdata/lab/thompson_lab/outputs box-storage:/Lab_Backups/Latest
 ```
 
 ---

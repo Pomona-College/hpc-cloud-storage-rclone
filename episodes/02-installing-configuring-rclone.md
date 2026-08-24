@@ -49,7 +49,7 @@ When you run `rclone config`, it starts a small web server locally on port 53682
 Open your terminal and run:
 
 ```bash
-ssh username@sagehen.hpc.pomona.edu -L 53682:localhost:53682
+ssh <myusername>@sagehen.hpc.pomona.edu -L 53682:localhost:53682
 ```
 
 Replace `username` with your Pomona NetID (e.g., jsmith@sagehen.hpc.pomona.edu).
@@ -65,7 +65,7 @@ Last login: Wed Mar 05 2026 13:45:02 -0700 from 192.168.1.100
 ### For Windows Users (PowerShell):
 
 ```powershell
-ssh username@sagehen.hpc.pomona.edu -L 53682:localhost:53682
+ssh <myusername>@sagehen.hpc.pomona.edu -L 53682:localhost:53682
 ```
 
 If SSH is not available, use PuTTY or Windows Subsystem for Linux (WSL).
@@ -124,26 +124,20 @@ Now you'll begin configuring rclone:
 rclone config
 ```
 
-**Expected output:**
+**Expected output** (first run, no config yet — a short three-option menu):
 ```
-Current remotes:
-
-Name                 Type
-====                 ====
-
-e) Edit existing remote
+NOTICE: Config file "/rhome/<myusername>/.config/rclone/rclone.conf" not found - using defaults
+No remotes found, make a new one?
 n) New remote
-d) Delete remote
-r) Rename remote
-c) Copy remote
-s) Set password
-u) Unset password
-m) Unmask password
-v) Verify integrity of remotes
-b) Back to main menu
+s) Set configuration password
 q) Quit config
-e/n/d/r/c/s/u/m/v/b/q>
+n/s/q>
 ```
+
+Once you have remotes configured, the same command shows the longer
+`e/n/d/r/c/s/u/m/v/b/q` menu with your remotes listed at the top.
+
+![The real first run on Sagehen: `module load rclone && rclone version` (v1.62.2 on Rocky 8.10), then `rclone config` with the fresh-config menu.](fig/02-rclone-version-and-config-start.png){alt='Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit.'}
 
 Type `n` to create a new remote. In the next episodes, you'll complete the configuration for Box or OneDrive.
 
@@ -167,7 +161,7 @@ This file contains your OAuth token and configuration. It's encrypted and should
 
 1. Open a terminal and connect to Sagehen with port forwarding:
    ```bash
-   ssh username@sagehen.hpc.pomona.edu -L 53682:localhost:53682
+   ssh <myusername>@sagehen.hpc.pomona.edu -L 53682:localhost:53682
    ```
 2. Load the rclone module and verify the version:
    ```bash
@@ -203,3 +197,6 @@ The exact version number may vary. Seeing any version output (no errors) confirm
 - The `rclone config` command starts an interactive setup wizard for adding cloud storage remotes
 
 ::::::::::::::::::::::::::::::::::::::::::::::
+
+<!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
+<script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>

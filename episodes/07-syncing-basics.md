@@ -175,15 +175,24 @@ rclone sync pomona-box:/backup /scratch/data
 rclone sync /scratch/data pomona-box:/backup
 ```
 
-### Mistake 2: Using sync for backups
+### Mistake 2: Using sync when you mean backup
+
+`sync` makes the destination *match* the source -- including deleting files
+from the destination when they disappear locally. That is exactly the point of
+Workflow 2's one-way **mirror** (only the latest results matter, old ones
+should be cleaned up). But for a **backup** -- where losing a local file must
+never delete the only remaining copy -- it is dangerous:
 
 ```bash
-# WRONG! Deletes files from backup if you lose them locally
+# WRONG for a backup! Deletes files from Box if you lose them locally
 rclone sync /scratch/work pomona-box:/backup
 
-# RIGHT! Use copy for backups
+# RIGHT for a backup: copy only adds and updates, never deletes
 rclone copy /scratch/work pomona-box:/backup
 ```
+
+Rule of thumb: `sync` for mirrors you want pruned, `copy` for backups you
+want to keep.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 

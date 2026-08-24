@@ -82,7 +82,7 @@ y/n> y
 rclone will automatically open your default web browser and direct you to Box's authorization page. If the browser doesn't open automatically, you'll see a URL like:
 
 ```
-If your browser doesn't open automatically, go to the following link: http://localhost:53682/auth?code=...
+If your browser doesn't open automatically, go to the following link: http://127.0.0.1:53682/auth?state=...
 ```
 
 Copy and paste this URL into your web browser.
@@ -119,6 +119,29 @@ Type `n` when asked about advanced config:
 y/n> n
 ```
 
+### Answer the Web-Browser Question
+
+rclone then asks one more question the older docs didn't show:
+
+```
+Use web browser to automatically authenticate rclone with remote?
+ * Say Y if the machine running rclone has a web browser you can use
+ * Say N if running rclone on a (remote) machine without web browser access
+If not sure try Y. If Y failed, try N.
+
+y) Yes (default)
+n) No
+y/n>
+```
+
+**Answer `n` on Sagehen** — the cluster has no web browser. rclone will then
+show instructions to run `rclone authorize "box"` on your own laptop (which
+does have a browser) and paste the resulting JSON blob back into the
+`config_token>` prompt on Sagehen. Paste the *entire* JSON output, braces
+included — a bare token string will fail with a decode error.
+
+![The two prompts in sequence: decline advanced config, then answer `n` to the browser question because Sagehen is a remote machine without one.](fig/03-box-advanced-config-and-browser-prompt.png){alt='Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input.'}
+
 ### Confirm and Exit
 
 Type `y` to confirm your configuration, then `q` to quit:
@@ -127,6 +150,7 @@ Type `y` to confirm your configuration, then `q` to quit:
 y/e/d> y
 e/n/d/r/c/s/u/m/v/b/q> q
 ```
+
 
 ## Verify the Connection
 

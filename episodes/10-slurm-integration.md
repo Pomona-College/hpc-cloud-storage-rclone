@@ -40,7 +40,7 @@ You can have rclone upload results automatically after a SLURM job completes:
 
 # Load modules
 module load rclone
-module load my-software
+module load miniconda3   # plus whatever else your job needs
 
 # Your simulation
 ./my-simulation --input data.txt --output results.dat
@@ -76,7 +76,7 @@ A more complete pipeline downloads input, processes it, verifies the output, and
 #SBATCH --time=2:00:00
 
 module load rclone
-module load your-pipeline-tools
+module load miniconda3   # plus whatever else your pipeline needs
 
 # Step 1: Download data from Box
 echo "Downloading data..."
@@ -187,16 +187,21 @@ cat > ~/test-job.slurm << 'EOF'
 #SBATCH --job-name=test-upload
 #SBATCH --time=0:10:00
 
-# Simulate a job that produces results
-mkdir -p /scratch/$USER/job-results
-echo "Job completed on $(date)" > /scratch/$USER/job-results/results.txt
+# Simulate a job that produces results.
+# NOTE: /scratch is only writable from INSIDE a running job -- trying this
+# mkdir on the head node fails with "Permission denied". Inside the job,
+# use the job's own auto-created scratch directory:
+RESULTS=/scratch/$SLURM_JOB_USER/$SLURM_JOB_ID/job-results
+mkdir -p "$RESULTS"
+echo "Job completed on $(date)" > "$RESULTS/results.txt"
+
 
 # Load rclone
 module load rclone
 
 # Upload results
 echo "Uploading results..."
-rclone copy /scratch/$USER/job-results pomona-box:/job-uploads/$(date +%Y-%m-%d-%H%M%S) \
+rclone copy "$RESULTS" pomona-box:/job-uploads/$(date +%Y-%m-%d-%H%M%S) \
   --log-file $HOME/rclone-job-upload.log
 
 # Check result
@@ -258,18 +263,22 @@ if ! rclone about pomona-box: > /dev/null 2>&1; then
   exit 1
 fi
 
-# Computation
-mkdir -p /scratch/$USER/job-results
-echo "Job completed on $(date)" > /scratch/$USER/job-results/results.txt
+# Computation (inside the job's auto-created scratch directory)
+RESULTS=/scratch/$SLURM_JOB_USER/$SLURM_JOB_ID/job-results
+mkdir -p "$RESULTS"
+echo "Job completed on $(date)" > "$RESULTS/results.txt"
 
-# Verify token still valid before upload
+# Verify token still valid before upload. IMPORTANT: /scratch is deleted when
+# the job ends, so if the upload can't happen, rescue the results to /rhome
+# first -- otherwise they are gone.
 if ! rclone about pomona-box: > /dev/null 2>&1; then
-  echo "Token expired during job; results saved at /scratch/$USER/job-results" \
+  cp -r "$RESULTS" $HOME/rescued-job-results-$SLURM_JOB_ID
+  echo "Token expired during job; results rescued to ~/rescued-job-results-$SLURM_JOB_ID" \
     | mail -s "Upload failed, results saved" $USER@pomona.edu
   exit 0
 fi
 
-rclone copy /scratch/$USER/job-results pomona-box:/job-uploads/$(date +%Y-%m-%d) \
+rclone copy "$RESULTS" pomona-box:/job-uploads/$(date +%Y-%m-%d) \
   --log-file $HOME/rclone-job-upload.log
 ```
 

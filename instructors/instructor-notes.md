@@ -260,7 +260,7 @@ rclone sync --no-traverse source dest
 Set up a practice scenario:
 
 1. Create sample box folder with 3 files
-2. Ask: "Write the rclone command to sync this to `/rhome/yourusername/sync-test/`"
+2. Ask: "Write the rclone command to sync this to `/rhome/<myusername>/sync-test/`"
 3. Require them to use `--dry-run` first
 4. Have them verify the dry-run output
 5. Have them execute without `--dry-run`
@@ -279,7 +279,7 @@ Set up a practice scenario:
 
 **Issue: "Source and destination overlap"**
 - Attempting to sync folder to subfolder of itself
-- Common mistake with paths like `box-storage:/` → `/home/user/box/`
+- Common mistake with paths like `box-storage:/` → `/rhome/<myusername>/box/`
 - Solution: Use specific subdirectories
 
 ---
@@ -477,7 +477,7 @@ Solutions:
 ```bash
 # Verify file accessible in web UI first
 # Check Sagehen folder ownership
-ls -ld /rhome/username/folder
+ls -ld /rhome/<myusername>/folder
 
 # Fix permissions
 chmod 755 /path/to/folder
@@ -521,7 +521,7 @@ chmod 644 /path/to/file
    ```bash
    # One large transfer vs many small = faster
    # Group files by day/project
-   rclone copy --transfers 4 /rhome/myproject/data /bigdata/backup/
+   rclone copy --transfers 4 /rhome/myproject/data /bigdata/lab/<labname>/backup/
    ```
 
 3. **Schedule off-peak:**
@@ -611,8 +611,7 @@ Have participants run through complete workflow:
 
 **Issue: rclone module not loading**
 - Check: `module avail rclone`
-- May need to load dependency: `module load rclone-base` or similar
-- Fallback: Use locally installed rclone
+- Fallback: Use a locally installed rclone, or contact its-hpc@pomona.edu
 
 **Issue: Box/OneDrive OAuth flow hangs**
 - Ensure X11 forwarding available or use `--no-open-browser`
@@ -639,3 +638,6 @@ Have participants run through complete workflow:
 - rclone OneDrive Guide: https://rclone.org/onedrive/
 - FUSE Documentation: https://github.com/libfuse/libfuse
 - Pomona Box: https://pomona.box.com
+
+<!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
+<script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>
