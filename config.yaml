@@ -1,5 +1,6 @@
 carpentry: 'incubator'
 title: 'Cloud Storage Integration with rclone — Pomona College HPC Workshop Series'
+description: 'Connecting Sagehen to Box and OneDrive with rclone: configuring remotes, syncing safely and automating transfers inside jobs.'
 created: '2026-03-05'
 license: 'CC-BY 4.0'
 contact: 'its-hpc@pomona.edu'
