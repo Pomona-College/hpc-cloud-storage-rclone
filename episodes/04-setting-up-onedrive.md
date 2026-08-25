@@ -199,7 +199,6 @@ rclone about pomona-onedrive:
 
 **Record the output**: How much storage do you have on OneDrive?
 
-::::::::::::::::::::::::::::::::::::: 
 
 ::::::::::::::::::::::::::::::::::::: solution
 
@@ -218,6 +217,7 @@ Other:   0B
 Seeing storage information (no errors) confirms your `pomona-onedrive` remote is configured correctly.
 
 ::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -235,7 +235,6 @@ rclone lsd pomona-onedrive:/
 
 **Compare**: Which remote has more folders? Which do you think you'll use more frequently?
 
-::::::::::::::::::::::::::::::::::::: 
 
 ::::::::::::::::::::::::::::::::::::: solution
 
@@ -244,6 +243,7 @@ rclone lsd pomona-onedrive:/
 OneDrive typically has more default folders (Documents, Downloads, Pictures). Box may have fewer folders if it is new. Use Box for institutional collaboration and OneDrive for personal storage.
 
 ::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
