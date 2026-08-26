@@ -70,3 +70,9 @@ If you encounter issues during this workshop:
 - **Individual episodes**: 20-45 minutes each
 
 Let's get started! Begin with [Episode 1: Why Cloud Storage Integration Matters](episodes/01-why-cloud-storage.md).
+
+## Acknowledgments
+
+Developed by **Andrew Wilson**, Director of Research Computing and Digital
+Scholarship at Pomona College, with **Andrei Motchenko**, who tested, edited
+and produced screenshots for the workshop series.
