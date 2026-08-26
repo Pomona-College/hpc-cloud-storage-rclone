@@ -33,11 +33,11 @@ You should have:
 - Basic familiarity with the command line (navigating directories, running commands)
 - A Pomona College Box account (institutional) or OneDrive account
 - SSH access to Sagehen HPC system
-- Approximately 2-3 hours for the full workshop
+- Approximately 4.5 hours for the full workshop
 
 ## Workshop Structure
 
-This workshop is divided into 6 episodes:
+This workshop is divided into 12 episodes:
 
 1. **Why Cloud Storage Integration Matters**: Understand use cases and options
 2. **Setting Up rclone with Box at Pomona**: Step-by-step Box configuration

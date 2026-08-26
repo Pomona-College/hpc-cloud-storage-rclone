@@ -7,7 +7,7 @@ A complete Carpentries Workbench workshop teaching researchers how to integrate 
 **Title**: Cloud Storage Integration with rclone  
 **Carpentry**: Incubator  
 **Level**: Intermediate (requires basic Linux/SSH knowledge)  
-**Duration**: 2.5 hours (6 episodes)  
+**Duration**: about 4.5 hours (12 episodes)  
 **Contact**: its-hpc@pomona.edu  
 
 ## What You'll Learn
