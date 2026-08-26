@@ -55,7 +55,7 @@ By the end of this workshop, you will be able to:
 
 ### Key Resources
 
-- **[Quick Reference Card](reference.md)** :  Command cheatsheet for quick lookup
+- **[Quick Reference Card](learners/reference.md)** :  Command cheatsheet for quick lookup
 - **[Troubleshooting Guide](instructor-notes.md#troubleshooting-guide-for-instructors)** :  Common issues and fixes
 - **[Links to Resources](links.md)** :  Additional rclone and HPC documentation
 
@@ -63,17 +63,17 @@ By the end of this workshop, you will be able to:
 
 ### Teaching the Workshop
 
-1. **Review [Setup Instructions](setup.md)** (recommended 1 week before)
-2. **Study [Instructor Notes](instructor-notes.md)** for teaching strategies
+1. **Review [Setup Instructions](learners/setup.md)** (recommended 1 week before)
+2. **Study [Instructor Notes](instructors/instructor-notes.md)** for teaching strategies
 3. **Test all demos beforehand** using your own Box/OneDrive accounts
-4. **Have [Learner Profiles](learner-profiles.md)** in mind for your audience
+4. **Have [Learner Profiles](profiles/learner-profiles.md)** in mind for your audience
 
 ### Workshop Materials
 
-- **Full teaching notes**: [instructor-notes.md](instructor-notes.md)
-- **Setup checklist**: [setup.md](setup.md)
-- **Quick reference for learners**: [reference.md](reference.md)
-- **Learner profiles**: [learner-profiles.md](learner-profiles.md)
+- **Full teaching notes**: [instructor-notes.md](instructors/instructor-notes.md)
+- **Setup checklist**: [setup.md](learners/setup.md)
+- **Quick reference for learners**: [reference.md](learners/reference.md)
+- **Learner profiles**: [learner-profiles.md](profiles/learner-profiles.md)
 
 ### Key Teaching Points
 
