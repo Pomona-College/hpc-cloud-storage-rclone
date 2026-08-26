@@ -292,10 +292,15 @@ If you use this workshop or adapt it, please cite:
 
 ## Acknowledgments
 
+**Andrew Wilson** — Director of Research Computing and Digital Scholarship,
+Pomona College. Workshop design and development.
+
+**Andrei Motchenko** — testing, editing, cleanup and screenshots across the
+Pomona College HPC Workshop Series.
+
 - **Carpentries**: For the Workbench framework
 - **rclone developers**: For the powerful tool
 - **Pomona IT**: For Box support and HPC infrastructure
-- **Andrew Wilson**: Course designer and HPC support specialist
 
 ---
 
