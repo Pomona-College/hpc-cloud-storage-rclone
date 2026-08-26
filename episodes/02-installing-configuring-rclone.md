@@ -6,7 +6,7 @@ exercises: 5
 
 :::::::::::::::::::::::::::::::::::::: questions
 
-- How do I load rclone on Sagehen?
+- How do I load rclone on Sagehen HPC?
 - What is SSH port forwarding and why do I need it?
 - How does the rclone configuration process begin?
 
@@ -30,7 +30,7 @@ Before starting, make sure you have:
 - A web browser for OAuth authentication
 - Approximately 15 minutes
 
-## Step 1: Connect to Sagehen with Port Forwarding
+## Step 1: Connect to Sagehen HPC with Port Forwarding
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -137,7 +137,7 @@ n/s/q>
 Once you have remotes configured, the same command shows the longer
 `e/n/d/r/c/s/u/m/v/b/q` menu with your remotes listed at the top.
 
-![The real first run on Sagehen: `module load rclone && rclone version` (v1.62.2 on Rocky 8.10), then `rclone config` with the fresh-config menu.](fig/02-rclone-version-and-config-start.png){alt='Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit.'}
+![The real first run on Sagehen HPC: `module load rclone && rclone version` (v1.62.2 on Rocky 8.10), then `rclone config` with the fresh-config menu.](fig/02-rclone-version-and-config-start.png){alt='Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit.'}
 
 Type `n` to create a new remote. In the next episodes, you'll complete the configuration for Box or OneDrive.
 

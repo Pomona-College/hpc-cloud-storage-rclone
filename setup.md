@@ -8,7 +8,7 @@ This page explains how to prepare for teaching the Cloud Storage Integration wit
 
 ### Verify Your Own Access
 
-1. **Test rclone on Sagehen**:
+1. **Test rclone on Sagehen HPC**:
    ```bash
    ssh your-user@sagehen.hpc.pomona.edu -L 53682:localhost:53682
    module load rclone

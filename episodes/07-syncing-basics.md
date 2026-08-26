@@ -100,7 +100,7 @@ After sync:
 
 ## Workflow 1: Backing Up HPC Results to Box
 
-You run a 3-day simulation on Sagehen that produces results in `/scratch/results/`. You want to **backup these results to Box** before they age out of `/scratch`.
+You run a 3-day simulation on Sagehen HPC that produces results in `/scratch/results/`. You want to **backup these results to Box** before they age out of `/scratch`.
 
 ### The Safe Approach: Use `rclone copy`
 

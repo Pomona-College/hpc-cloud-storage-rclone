@@ -24,7 +24,7 @@ This workshop is designed for researchers and students at Pomona College who wan
 ## 2. The Graduate Student Researcher
 
 **Background:**
-- Running thesis research on Sagehen or local workstation
+- Running thesis research on Sagehen HPC or local workstation
 - Collaborating with advisors and lab members
 - Managing thesis data and results
 

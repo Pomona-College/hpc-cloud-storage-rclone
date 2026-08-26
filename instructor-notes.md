@@ -26,7 +26,7 @@ Instructors can shorten the workshop by:
 
 ### For Instructor
 - Pomona College NetID and HPC account
-- Sagehen access with Box and OneDrive configured
+- Sagehen HPC access with Box and OneDrive configured
 - SSH client for terminal demonstrations
 - rclone installed locally for demos
 - (Optional) Screen sharing setup for live demonstration

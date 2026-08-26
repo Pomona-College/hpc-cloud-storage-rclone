@@ -27,7 +27,7 @@ exercises: 5
 Pomona uses a 3-tier data classification (PUBLIC / PROPRIETARY / RESTRICTED). Cloud-storage rules differ by tier:
 
 - **PUBLIC** data: may be shared via Pomona Box or OneDrive (`pomona-box:` and `pomona-onedrive:` rclone remotes), or via institutionally approved public archives (Zenodo, OSF, GitHub).
-- **PROPRIETARY** data: institutional storage (Pomona Box / OneDrive / Sagehen) only. No personal cloud accounts.
+- **PROPRIETARY** data: institutional storage (Pomona Box / OneDrive / Sagehen HPC) only. No personal cloud accounts.
 - **RESTRICTED** data (FERPA, HIPAA, ITAR/EAR, CUI): MUST be encrypted with gocryptfs (AES-256-GCM) BEFORE upload. Personal cloud accounts (personal Google Drive, Dropbox, etc.) are PROHIBITED. See Workshop 14 (Data Classification) and Workshop 15 (gocryptfs) for the operational details.
 
 When in doubt, classify as RESTRICTED and consult the Registrar (FERPA), HIPAA Privacy Officer, ORSP (export-controlled), or its-hpc@pomona.edu (technical implementation).

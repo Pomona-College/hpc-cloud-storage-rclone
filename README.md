@@ -169,7 +169,7 @@ cloud-storage-rclone/
 ### rclone Information
 
 - **Latest version**: v1.65.2+ (as of March 2026)
-- **Available on Sagehen**: `module load rclone`
+- **Available on Sagehen HPC**: `module load rclone`
 - **Installation**: Pre-installed; no local installation needed
 - **Documentation**: https://rclone.org/
 

@@ -7,7 +7,7 @@ These learner profiles represent typical participants in the Cloud Storage Integ
 **Background:** Tenure-track faculty in Environmental Sciences, 10 years experience
 
 **HPC Experience:** Moderate
-- Uses Sagehen for statistical modeling with R
+- Uses Sagehen HPC for statistical modeling with R
 - Familiar with command line but not expert
 - Primarily uses cluster for computational work, not data transfer
 

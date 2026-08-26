@@ -234,7 +234,7 @@ rclone sync pomona-box:/project/2026-03 /scratch/march-data
 
 ## Quick Setup Reminder
 
-1. Connect to Sagehen with port forwarding:
+1. Connect to Sagehen HPC with port forwarding:
    ```bash
    ssh user@sagehen.hpc.pomona.edu -L 53682:localhost:53682
    ```

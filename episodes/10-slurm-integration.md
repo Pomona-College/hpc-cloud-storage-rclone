@@ -105,7 +105,7 @@ The verification step (number 3) is critical for unattended runs. Without it, a 
 
 ## Bandwidth and rclone
 
-The Sagehen connection to Box and OneDrive is fast (typically 100+ MB/s for large files), but small-file transfers spend most of their time on per-file overhead. If your pipeline output is a directory of 10,000 small files, transfer time will be dominated by HTTP round-trips, not raw bandwidth.
+The Sagehen HPC connection to Box and OneDrive is fast (typically 100+ MB/s for large files), but small-file transfers spend most of their time on per-file overhead. If your pipeline output is a directory of 10,000 small files, transfer time will be dominated by HTTP round-trips, not raw bandwidth.
 
 Two mitigations:
 
