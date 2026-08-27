@@ -1,8 +1,8 @@
 # Quick Reference: rclone Commands
 
-This reference guide covers essential rclone commands and configuration steps for syncing data between the Sagehen cluster and cloud storage (Box or OneDrive).
+This reference guide covers essential rclone commands and configuration steps for syncing data between the Sagehen HPC cluster and cloud storage (Box or OneDrive).
 
-## Loading rclone on Sagehen
+## Loading rclone on Sagehen HPC
 
 Before using rclone, load the module on Sagehen:
 

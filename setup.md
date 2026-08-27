@@ -6,7 +6,7 @@ Before attending the **Cloud Storage Integration with rclone** workshop, please 
 
 ### 1. Active Pomona College HPC Account
 
-You should have an active account on the Sagehen cluster (sagehen.hpc.pomona.edu). If you haven't already done so, you can request an account:
+You should have an active account on the Sagehen HPC cluster (sagehen.hpc.pomona.edu). If you haven't already done so, you can request an account:
 
 - **Request form (preferred):** [HPC account request](https://servicedesk.pomona.edu/support/catalog/items/83)
 - **Email:** its-hpc@pomona.edu
@@ -42,7 +42,7 @@ You should be comfortable with basic terminal commands such as:
 
 If you need a refresher on command-line basics, we recommend reviewing a basic tutorial before the workshop. Don't worry; we'll review essential commands together during the session.
 
-### 4. Understanding Sagehen Storage
+### 4. Understanding Sagehen HPC Storage
 
 Please familiarize yourself with the different storage locations on Sagehen:
 

@@ -22,7 +22,7 @@ exercises: 10
 
 ## Configuring rclone for Box
 
-This episode assumes you are connected to Sagehen with port forwarding and have rclone loaded (see Episode 2). Start the configuration:
+This episode assumes you are connected to Sagehen HPC with port forwarding and have rclone loaded (see Episode 2). Start the configuration:
 
 ```bash
 rclone config
@@ -140,7 +140,7 @@ does have a browser) and paste the resulting JSON blob back into the
 `config_token>` prompt on Sagehen. Paste the *entire* JSON output, braces
 included — a bare token string will fail with a decode error.
 
-![The two prompts in sequence: decline advanced config, then answer `n` to the browser question because Sagehen is a remote machine without one.](fig/03-box-advanced-config-and-browser-prompt.png){alt='Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input.'}
+![The two prompts in sequence: decline advanced config, then answer `n` to the browser question because Sagehen HPC is a remote machine without one.](fig/03-box-advanced-config-and-browser-prompt.png){alt='Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input.'}
 
 ### Confirm and Exit
 

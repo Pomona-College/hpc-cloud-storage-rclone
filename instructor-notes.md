@@ -2,7 +2,7 @@
 
 **Workshop Instructor:** Andrew Wilson  
 **Contact:** its-hpc@pomona.edu  
-**Cluster:** Sagehen (sagehen.hpc.pomona.edu)  
+**Cluster:** Sagehen HPC (sagehen.hpc.pomona.edu)  
 **Scheduler:** SLURM  
 **Module System:** Lmod
 

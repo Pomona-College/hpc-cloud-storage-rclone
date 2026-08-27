@@ -22,8 +22,9 @@ exercises: 10
 
 ## Copy vs Sync: The Critical Difference
 
-::::::::::::::::::::::::::::::::::::: callout
+![copy only adds; sync will delete to make the destination match.](fig/03-copy-vs-sync.png){alt='Two panels comparing rclone copy and rclone sync. Copy adds and updates files at the destination and never deletes anything, so it is safe by default. Sync makes the destination match the source exactly and deletes anything at the destination that is not in the source. A warning advises always doing a dry run of a sync first.'}
 
+::::::::::::::::::::::::::::::::::::: callout
 ## Two Fundamentally Different Operations
 
 ### rclone copy: Additive (Safe)
@@ -100,7 +101,7 @@ After sync:
 
 ## Workflow 1: Backing Up HPC Results to Box
 
-You run a 3-day simulation on Sagehen that produces results in `/scratch/results/`. You want to **backup these results to Box** before they age out of `/scratch`.
+You run a 3-day simulation on Sagehen HPC that produces results in `/scratch/results/`. You want to **backup these results to Box** before they age out of `/scratch`.
 
 ### The Safe Approach: Use `rclone copy`
 

@@ -28,6 +28,8 @@ Manual rclone copies work for one-off uploads, but research workflows generate r
 
 This pattern is especially valuable for collaborative research, where teammates expect new data to land in a shared Box folder on a known schedule, and for long sweeps where you need to start the next experiment as soon as the previous results are safely uploaded.
 
+![Upload, verify, then clean up — in that order.](fig/04-post-job-upload.png){alt='Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused.'}
+
 ## Post-Job Upload
 
 You can have rclone upload results automatically after a SLURM job completes:
@@ -105,7 +107,7 @@ The verification step (number 3) is critical for unattended runs. Without it, a 
 
 ## Bandwidth and rclone
 
-The Sagehen connection to Box and OneDrive is fast (typically 100+ MB/s for large files), but small-file transfers spend most of their time on per-file overhead. If your pipeline output is a directory of 10,000 small files, transfer time will be dominated by HTTP round-trips, not raw bandwidth.
+The Sagehen HPC connection to Box and OneDrive is fast (typically 100+ MB/s for large files), but small-file transfers spend most of their time on per-file overhead. If your pipeline output is a directory of 10,000 small files, transfer time will be dominated by HTTP round-trips, not raw bandwidth.
 
 Two mitigations:
 

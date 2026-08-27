@@ -47,7 +47,7 @@ ERROR : oauth2: server redirect URL does not match configured redirect URI
 
 **Cause:** You're running the command on a different machine than where you set it up.
 
-**Solution:** Run `rclone config` on Sagehen with port forwarding `-L 53682:localhost:53682`.
+**Solution:** Run `rclone config` on Sagehen HPC with port forwarding `-L 53682:localhost:53682`.
 
 ### "rclone: command not found"
 

@@ -27,12 +27,14 @@ exercises: 5
 Pomona uses a 3-tier data classification (PUBLIC / PROPRIETARY / RESTRICTED). Cloud-storage rules differ by tier:
 
 - **PUBLIC** data: may be shared via Pomona Box or OneDrive (`pomona-box:` and `pomona-onedrive:` rclone remotes), or via institutionally approved public archives (Zenodo, OSF, GitHub).
-- **PROPRIETARY** data: institutional storage (Pomona Box / OneDrive / Sagehen) only. No personal cloud accounts.
+- **PROPRIETARY** data: institutional storage (Pomona Box / OneDrive / Sagehen HPC) only. No personal cloud accounts.
 - **RESTRICTED** data (FERPA, HIPAA, ITAR/EAR, CUI): MUST be encrypted with gocryptfs (AES-256-GCM) BEFORE upload. Personal cloud accounts (personal Google Drive, Dropbox, etc.) are PROHIBITED. See Workshop 14 (Data Classification) and Workshop 15 (gocryptfs) for the operational details.
 
 When in doubt, classify as RESTRICTED and consult the Registrar (FERPA), HIPAA Privacy Officer, ORSP (export-controlled), or its-hpc@pomona.edu (technical implementation).
 
 ::::::::::::::::::::::::::::::::::::::
+
+![rclone runs on the cluster, so your laptop is not in the path.](fig/01-rclone-architecture.png){alt='Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node.'}
 
 ## The Challenge: Data Movement in Research
 
