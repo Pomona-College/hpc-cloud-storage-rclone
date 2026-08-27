@@ -34,6 +34,8 @@ When in doubt, classify as RESTRICTED and consult the Registrar (FERPA), HIPAA P
 
 ::::::::::::::::::::::::::::::::::::::
 
+![rclone runs on the cluster, so your laptop is not in the path.](fig/01-rclone-architecture.png){alt='Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node.'}
+
 ## The Challenge: Data Movement in Research
 
 Working on a high-performance computing (HPC) system like Sagehen at Pomona College is powerful, but it introduces a common challenge: **how do you move large amounts of data between the HPC cluster and your personal or collaborative storage?**

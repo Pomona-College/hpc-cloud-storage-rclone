@@ -28,6 +28,8 @@ Manual rclone copies work for one-off uploads, but research workflows generate r
 
 This pattern is especially valuable for collaborative research, where teammates expect new data to land in a shared Box folder on a known schedule, and for long sweeps where you need to start the next experiment as soon as the previous results are safely uploaded.
 
+![Upload, verify, then clean up — in that order.](fig/04-post-job-upload.png){alt='Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused.'}
+
 ## Post-Job Upload
 
 You can have rclone upload results automatically after a SLURM job completes:

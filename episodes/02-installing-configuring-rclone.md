@@ -30,6 +30,8 @@ Before starting, make sure you have:
 - A web browser for OAuth authentication
 - Approximately 15 minutes
 
+![The browser step happens on your machine, because the cluster has none.](fig/02-oauth-flow.png){alt='Five steps to authorise rclone. Run rclone config on Sagehen HPC, choose the remote type of box or onedrive, let rclone print a URL, open that URL in your own browser and sign in with Pomona single sign-on, then paste the token back into the terminal.'}
+
 ## Step 1: Connect to Sagehen HPC with Port Forwarding
 
 ::::::::::::::::::::::::::::::::::::: callout
