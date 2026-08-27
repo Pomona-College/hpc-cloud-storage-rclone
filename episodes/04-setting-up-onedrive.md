@@ -24,6 +24,8 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::: callout
 
+![What the OneDrive authorisation currently returns on the Pomona tenant.](fig/04-onedrive-admin-approval.png){alt='A Microsoft consent page on the Pomona College tenant. It reads Need admin approval, rclone, and explains that rclone needs permission to access resources in your organization that only an admin can grant, with links to ask an admin for consent or return to the application without granting consent.'}
+
 ## Deciding Between Box and OneDrive
 
 Use OneDrive with rclone if you:
