@@ -368,7 +368,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Why Cloud Storage Integration Matters</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/01-why-cloud-storage.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -425,7 +425,7 @@ rclone remotes), or via institutionally approved public archives
 (Zenodo, OSF, GitHub).</li>
 <li>
 <strong>PROPRIETARY</strong> data: institutional storage (Pomona Box
-/ OneDrive / Sagehen) only. No personal cloud accounts.</li>
+/ OneDrive / Sagehen HPC) only. No personal cloud accounts.</li>
 <li>
 <strong>RESTRICTED</strong> data (FERPA, HIPAA, ITAR/EAR, CUI): MUST
 be encrypted with gocryptfs (AES-256-GCM) BEFORE upload. Personal cloud
@@ -438,7 +438,9 @@ operational details.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="the-challenge-data-movement-in-research">The Challenge: Data Movement in Research<a class="anchor" aria-label="anchor" href="#the-challenge-data-movement-in-research"></a></h2>
+<figure><img src="../fig/01-rclone-architecture.png" alt="Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node." class="figure mx-auto d-block"><div class="figcaption">rclone runs on the cluster, so your laptop is
+not in the path.</div>
+</figure><section><h2 class="section-heading" id="the-challenge-data-movement-in-research">The Challenge: Data Movement in Research<a class="anchor" aria-label="anchor" href="#the-challenge-data-movement-in-research"></a></h2>
 <hr class="half-width"><p>Working on a high-performance computing (HPC) system like Sagehen at
 Pomona College is powerful, but it introduces a common challenge:
 <strong>how do you move large amounts of data between the HPC cluster
@@ -851,8 +853,8 @@ data to cloud storage</li>
   "url": "https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/01-why-cloud-storage.html",
   "identifier": "https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/01-why-cloud-storage.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

@@ -425,11 +425,21 @@
         <h1>All Images</h1>
         
 <section id="01-why-cloud-storage"><h2 class="section-heading"><a href="01-why-cloud-storage.html">Why Cloud Storage Integration Matters</a></h2>
-<hr class="half-width"></section><section id="02-installing-configuring-rclone"><h2 class="section-heading"><a href="02-installing-configuring-rclone.html">Installing and Configuring rclone</a></h2>
+<hr class="half-width">
+<h3 id="01-why-cloud-storage-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node.’</p>
+<figure><img src="../fig/01-rclone-architecture.png" alt="Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node." class="figure mx-auto d-block"><div class="figcaption">rclone runs on the cluster, so your laptop is
+not in the path.</div>
+</figure><hr></section><section id="02-installing-configuring-rclone"><h2 class="section-heading"><a href="02-installing-configuring-rclone.html">Installing and Configuring rclone</a></h2>
 <hr class="half-width">
 <h3 id="02-installing-configuring-rclone-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Five steps to authorise rclone. Run rclone config on Sagehen HPC, choose the remote type of box or onedrive, let rclone print a URL, open that URL in your own browser and sign in with Pomona single sign-on, then paste the token back into the terminal.’</p>
+<figure><img src="../fig/02-oauth-flow.png" alt="Five steps to authorise rclone. Run rclone config on Sagehen HPC, choose the remote type of box or onedrive, let rclone print a URL, open that URL in your own browser and sign in with Pomona single sign-on, then paste the token back into the terminal." class="figure mx-auto d-block"><div class="figcaption">The browser step happens on your machine,
+because the cluster has none.</div>
+</figure><hr>
+<h3 id="02-installing-configuring-rclone-figure-2">Figure 2</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit.’</p>
-<figure><img src="../fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen:
+<figure><img src="../fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen HPC:
 <code>module load rclone &amp;&amp; rclone version</code> (v1.62.2 on
 Rocky 8.10), then <code>rclone config</code> with the fresh-config
 menu.</div>
@@ -439,15 +449,30 @@ menu.</div>
 <p aria-hidden="true">Image 1 of 1: ‘Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input.’</p>
 <figure><img src="../fig/03-box-advanced-config-and-browser-prompt.png" alt="Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input." class="figure mx-auto d-block"><div class="figcaption">The two prompts in sequence: decline advanced
 config, then answer <code>n</code> to the browser question because
-Sagehen is a remote machine without one.</div>
+Sagehen HPC is a remote machine without one.</div>
 </figure><hr></section><section id="04-setting-up-onedrive"><h2 class="section-heading"><a href="04-setting-up-onedrive.html">Setting Up OneDrive</a></h2>
-<hr class="half-width"></section><section id="05-copying-files"><h2 class="section-heading"><a href="05-copying-files.html">Copying Files</a></h2>
+<hr class="half-width">
+<h3 id="04-setting-up-onedrive-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A Microsoft consent page on the Pomona College tenant. It reads Need admin approval, rclone, and explains that rclone needs permission to access resources in your organization that only an admin can grant, with links to ask an admin for consent or return to the application without granting consent.’</p>
+<figure><img src="../fig/04-onedrive-admin-approval.png" alt="A Microsoft consent page on the Pomona College tenant. It reads Need admin approval, rclone, and explains that rclone needs permission to access resources in your organization that only an admin can grant, with links to ask an admin for consent or return to the application without granting consent." class="figure mx-auto d-block"><div class="figcaption">What the OneDrive authorisation currently
+returns on the Pomona tenant.</div>
+</figure><hr></section><section id="05-copying-files"><h2 class="section-heading"><a href="05-copying-files.html">Copying Files</a></h2>
 <hr class="half-width"></section><section id="06-listing-inspecting"><h2 class="section-heading"><a href="06-listing-inspecting.html">Listing and Inspecting</a></h2>
 <hr class="half-width"></section><section id="07-syncing-basics"><h2 class="section-heading"><a href="07-syncing-basics.html">Syncing Basics</a></h2>
-<hr class="half-width"></section><section id="08-advanced-sync-workflows"><h2 class="section-heading"><a href="08-advanced-sync-workflows.html">Advanced Sync Workflows</a></h2>
+<hr class="half-width">
+<h3 id="07-syncing-basics-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two panels comparing rclone copy and rclone sync. Copy adds and updates files at the destination and never deletes anything, so it is safe by default. Sync makes the destination match the source exactly and deletes anything at the destination that is not in the source. A warning advises always doing a dry run of a sync first.’</p>
+<figure><img src="../fig/03-copy-vs-sync.png" alt="Two panels comparing rclone copy and rclone sync. Copy adds and updates files at the destination and never deletes anything, so it is safe by default. Sync makes the destination match the source exactly and deletes anything at the destination that is not in the source. A warning advises always doing a dry run of a sync first." class="figure mx-auto d-block"><div class="figcaption">copy only adds; sync will delete to make the
+destination match.</div>
+</figure><hr></section><section id="08-advanced-sync-workflows"><h2 class="section-heading"><a href="08-advanced-sync-workflows.html">Advanced Sync Workflows</a></h2>
 <hr class="half-width"></section><section id="09-automating-with-cron"><h2 class="section-heading"><a href="09-automating-with-cron.html">Automating with Cron</a></h2>
 <hr class="half-width"></section><section id="10-slurm-integration"><h2 class="section-heading"><a href="10-slurm-integration.html">SLURM Integration</a></h2>
-<hr class="half-width"></section><section id="11-token-management"><h2 class="section-heading"><a href="11-token-management.html">Token Management and Maintenance</a></h2>
+<hr class="half-width">
+<h3 id="10-slurm-integration-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused.’</p>
+<figure><img src="../fig/04-post-job-upload.png" alt="Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused." class="figure mx-auto d-block"><div class="figcaption">Upload, verify, then clean up — in that
+order.</div>
+</figure><hr></section><section id="11-token-management"><h2 class="section-heading"><a href="11-token-management.html">Token Management and Maintenance</a></h2>
 <hr class="half-width"></section><section id="12-troubleshooting-best-practices"><h2 class="section-heading"><a href="12-troubleshooting-best-practices.html">Troubleshooting and Best Practices</a></h2>
 <hr class="half-width"></section>
 </div>
@@ -499,8 +524,8 @@ Sagehen is a remote machine without one.</div>
   "url": "https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/images.html",
   "identifier": "https://pomona-college.github.io/hpc-cloud-storage-rclone/instructor/images.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-26",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

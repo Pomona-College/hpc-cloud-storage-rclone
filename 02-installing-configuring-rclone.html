@@ -209,7 +209,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#step-1-connect-to-sagehen-with-port-forwarding">Step 1: Connect to Sagehen with Port Forwarding</a></li>
+<li><a href="#step-1-connect-to-sagehen-hpc-with-port-forwarding">Step 1: Connect to Sagehen HPC with Port Forwarding</a></li>
 <li><a href="#step-2-load-the-rclone-module">Step 2: Load the rclone Module</a></li>
 <li><a href="#step-3-start-rclone-configuration">Step 3: Start rclone Configuration</a></li>
 <li><a href="#saving-your-configuration">Saving Your Configuration</a></li>
@@ -367,7 +367,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installing and Configuring rclone</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/02-installing-configuring-rclone.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -386,7 +386,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How do I load rclone on Sagehen?</li>
+<ul><li>How do I load rclone on Sagehen HPC?</li>
 <li>What is SSH port forwarding and why do I need it?</li>
 <li>How does the rclone configuration process begin?</li>
 </ul></div>
@@ -412,7 +412,9 @@
 Bash on Windows)</li>
 <li>A web browser for OAuth authentication</li>
 <li>Approximately 15 minutes</li>
-</ul></section><section><h2 class="section-heading" id="step-1-connect-to-sagehen-with-port-forwarding">Step 1: Connect to Sagehen with Port Forwarding<a class="anchor" aria-label="anchor" href="#step-1-connect-to-sagehen-with-port-forwarding"></a></h2>
+</ul><figure><img src="fig/02-oauth-flow.png" alt="Five steps to authorise rclone. Run rclone config on Sagehen HPC, choose the remote type of box or onedrive, let rclone print a URL, open that URL in your own browser and sign in with Pomona single sign-on, then paste the token back into the terminal." class="figure mx-auto d-block"><div class="figcaption">The browser step happens on your machine,
+because the cluster has none.</div>
+</figure></section><section><h2 class="section-heading" id="step-1-connect-to-sagehen-hpc-with-port-forwarding">Step 1: Connect to Sagehen HPC with Port Forwarding<a class="anchor" aria-label="anchor" href="#step-1-connect-to-sagehen-hpc-with-port-forwarding"></a></h2>
 <hr class="half-width"><div id="ssh-port-forwarding-for-secure-oauth-authentication" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -516,7 +518,7 @@ n/s/q&gt;</code></pre>
 <p>Once you have remotes configured, the same command shows the longer
 <code>e/n/d/r/c/s/u/m/v/b/q</code> menu with your remotes listed at the
 top.</p>
-<figure><img src="fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen:
+<figure><img src="fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen HPC:
 <code>module load rclone &amp;&amp; rclone version</code> (v1.62.2 on
 Rocky 8.10), then <code>rclone config</code> with the fresh-config
 menu.</div>
@@ -668,8 +670,8 @@ wizard for adding cloud storage remotes</li>
   "url": "https://pomona-college.github.io/hpc-cloud-storage-rclone/02-installing-configuring-rclone.html",
   "identifier": "https://pomona-college.github.io/hpc-cloud-storage-rclone/02-installing-configuring-rclone.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

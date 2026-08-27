@@ -366,7 +366,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>SLURM Integration</h1>
-        <p>Last updated on 2026-08-24 |
+        <p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/10-slurm-integration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -420,7 +420,9 @@ without any human intervention.</p>
 teammates expect new data to land in a shared Box folder on a known
 schedule, and for long sweeps where you need to start the next
 experiment as soon as the previous results are safely uploaded.</p>
-</section><section><h2 class="section-heading" id="post-job-upload">Post-Job Upload<a class="anchor" aria-label="anchor" href="#post-job-upload"></a></h2>
+<figure><img src="fig/04-post-job-upload.png" alt="Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused." class="figure mx-auto d-block"><div class="figcaption">Upload, verify, then clean up — in that
+order.</div>
+</figure></section><section><h2 class="section-heading" id="post-job-upload">Post-Job Upload<a class="anchor" aria-label="anchor" href="#post-job-upload"></a></h2>
 <hr class="half-width"><p>You can have rclone upload results automatically after a SLURM job
 completes:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -510,11 +512,11 @@ reuse it across pipelines.</p>
 <div id="bandwidth-and-rclone" class="callout-inner">
 <h3 class="callout-title">Bandwidth and rclone</h3>
 <div class="callout-content">
-<p>The Sagehen connection to Box and OneDrive is fast (typically 100+
-MB/s for large files), but small-file transfers spend most of their time
-on per-file overhead. If your pipeline output is a directory of 10,000
-small files, transfer time will be dominated by HTTP round-trips, not
-raw bandwidth.</p>
+<p>The Sagehen HPC connection to Box and OneDrive is fast (typically
+100+ MB/s for large files), but small-file transfers spend most of their
+time on per-file overhead. If your pipeline output is a directory of
+10,000 small files, transfer time will be dominated by HTTP round-trips,
+not raw bandwidth.</p>
 <p>Two mitigations:</p>
 <p>Pack small files into a tarball before upload:
 <code>tar czf results.tar.gz /scratch/output</code>, then
@@ -823,8 +825,8 @@ pipeline failures</li>
   "url": "https://pomona-college.github.io/hpc-cloud-storage-rclone/10-slurm-integration.html",
   "identifier": "https://pomona-college.github.io/hpc-cloud-storage-rclone/10-slurm-integration.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-24",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>

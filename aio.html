@@ -424,7 +424,7 @@
         
 <section id="aio-01-why-cloud-storage"><p>Content from <a href="01-why-cloud-storage.html">Why Cloud Storage Integration Matters</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/01-why-cloud-storage.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -478,7 +478,7 @@ rclone remotes), or via institutionally approved public archives
 (Zenodo, OSF, GitHub).</li>
 <li>
 <strong>PROPRIETARY</strong> data: institutional storage (Pomona Box
-/ OneDrive / Sagehen) only. No personal cloud accounts.</li>
+/ OneDrive / Sagehen HPC) only. No personal cloud accounts.</li>
 <li>
 <strong>RESTRICTED</strong> data (FERPA, HIPAA, ITAR/EAR, CUI): MUST
 be encrypted with gocryptfs (AES-256-GCM) BEFORE upload. Personal cloud
@@ -492,7 +492,9 @@ operational details.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="the-challenge-data-movement-in-research">The Challenge: Data Movement in Research<a class="anchor" aria-label="anchor" href="#the-challenge-data-movement-in-research"></a>
+<figure><img src="fig/01-rclone-architecture.png" alt="Sagehen HPC storage, covering /rhome, /bigdata and /scratch, connects through the rclone command-line tool to two cloud destinations: Pomona Box, the institutional service, and OneDrive on the Pomona Microsoft 365 tenant. A note explains that rclone runs on the cluster so transfers do not pass through your laptop, and that long transfers belong in a job rather than on the head node." class="figure mx-auto d-block"><div class="figcaption">rclone runs on the cluster, so your laptop is
+not in the path.</div>
+</figure><section><h2 class="section-heading" id="the-challenge-data-movement-in-research">The Challenge: Data Movement in Research<a class="anchor" aria-label="anchor" href="#the-challenge-data-movement-in-research"></a>
 </h2>
 <hr class="half-width">
 <p>Working on a high-performance computing (HPC) system like Sagehen at
@@ -898,7 +900,7 @@ data to cloud storage</li>
 </div>
 </section></section><section id="aio-02-installing-configuring-rclone"><p>Content from <a href="02-installing-configuring-rclone.html">Installing and Configuring rclone</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/02-installing-configuring-rclone.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -912,7 +914,7 @@ data to cloud storage</li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I load rclone on Sagehen?</li>
+<li>How do I load rclone on Sagehen HPC?</li>
 <li>What is SSH port forwarding and why do I need it?</li>
 <li>How does the rclone configuration process begin?</li>
 </ul>
@@ -944,7 +946,10 @@ data to cloud storage</li>
 Bash on Windows)</li>
 <li>A web browser for OAuth authentication</li>
 <li>Approximately 15 minutes</li>
-</ul></section><section><h2 class="section-heading" id="step-1-connect-to-sagehen-with-port-forwarding">Step 1: Connect to Sagehen with Port Forwarding<a class="anchor" aria-label="anchor" href="#step-1-connect-to-sagehen-with-port-forwarding"></a>
+</ul>
+<figure><img src="fig/02-oauth-flow.png" alt="Five steps to authorise rclone. Run rclone config on Sagehen HPC, choose the remote type of box or onedrive, let rclone print a URL, open that URL in your own browser and sign in with Pomona single sign-on, then paste the token back into the terminal." class="figure mx-auto d-block"><div class="figcaption">The browser step happens on your machine,
+because the cluster has none.</div>
+</figure></section><section><h2 class="section-heading" id="step-1-connect-to-sagehen-hpc-with-port-forwarding">Step 1: Connect to Sagehen HPC with Port Forwarding<a class="anchor" aria-label="anchor" href="#step-1-connect-to-sagehen-hpc-with-port-forwarding"></a>
 </h2>
 <hr class="half-width">
 <div id="ssh-port-forwarding-for-secure-oauth-authentication" class="callout">
@@ -1060,7 +1065,7 @@ n/s/q&gt;</code></pre>
 <p>Once you have remotes configured, the same command shows the longer
 <code>e/n/d/r/c/s/u/m/v/b/q</code> menu with your remotes listed at the
 top.</p>
-<figure><img src="fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen:
+<figure><img src="fig/02-rclone-version-and-config-start.png" alt="Terminal on Sagehen showing module load rclone and rclone version reporting rclone v1.62.2 on Rocky Linux 8.10. Below, rclone config prints a notice that no config file exists yet and asks No remotes found, make a new one, with options n for new remote, s for set configuration password, and q to quit." class="figure mx-auto d-block"><div class="figcaption">The real first run on Sagehen HPC:
 <code>module load rclone &amp;&amp; rclone version</code> (v1.62.2 on
 Rocky 8.10), then <code>rclone config</code> with the fresh-config
 menu.</div>
@@ -1160,7 +1165,7 @@ wizard for adding cloud storage remotes</li>
 <!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
 <script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script></section></section><section id="aio-03-setting-up-box"><p>Content from <a href="03-setting-up-box.html">Setting Up Pomona Box</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/03-setting-up-box.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1198,7 +1203,7 @@ wizard for adding cloud storage remotes</li>
 <section><h2 class="section-heading" id="configuring-rclone-for-box">Configuring rclone for Box<a class="anchor" aria-label="anchor" href="#configuring-rclone-for-box"></a>
 </h2>
 <hr class="half-width">
-<p>This episode assumes you are connected to Sagehen with port
+<p>This episode assumes you are connected to Sagehen HPC with port
 forwarding and have rclone loaded (see Episode 2). Start the
 configuration:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -1329,7 +1334,7 @@ a browser) and paste the resulting JSON blob back into the
 fail with a decode error.</p>
 <figure><img src="fig/03-box-advanced-config-and-browser-prompt.png" alt="Terminal showing the rclone Box setup wizard. The Edit advanced config question has been answered n. rclone then asks whether to use a web browser to automatically authenticate, explaining to say N if rclone runs on a remote machine without browser access. The y/n prompt is waiting for input." class="figure mx-auto d-block"><div class="figcaption">The two prompts in sequence: decline advanced
 config, then answer <code>n</code> to the browser question because
-Sagehen is a remote machine without one.</div>
+Sagehen HPC is a remote machine without one.</div>
 </figure>
 </div>
 <div class="section level3">
@@ -1398,7 +1403,7 @@ have? How much is used?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You should see output similar to:</p>
 <pre><code>Total:   1.0T
@@ -1446,7 +1451,7 @@ list.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>After running <code>rclone mkdir pomona-box:/rclone-test</code>,
 verify with:</p>
@@ -1485,7 +1490,7 @@ for this Box account and can be customized</li>
 </div>
 </section></section><section id="aio-04-setting-up-onedrive"><p>Content from <a href="04-setting-up-onedrive.html">Setting Up OneDrive</a></p>
 <hr>
-<p>Last updated on 2026-08-25 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/04-setting-up-onedrive.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1525,14 +1530,18 @@ available?</li>
 <section><h2 class="section-heading" id="when-to-choose-onedrive">When to Choose OneDrive<a class="anchor" aria-label="anchor" href="#when-to-choose-onedrive"></a>
 </h2>
 <hr class="half-width">
-<div id="deciding-between-box-and-onedrive" class="callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="deciding-between-box-and-onedrive" class="callout-inner">
-<h3 class="callout-title">Deciding Between Box and OneDrive</h3>
+<div class="callout-inner">
 <div class="callout-content">
+<figure><img src="fig/04-onedrive-admin-approval.png" alt="A Microsoft consent page on the Pomona College tenant. It reads Need admin approval, rclone, and explains that rclone needs permission to access resources in your organization that only an admin can grant, with links to ask an admin for consent or return to the application without granting consent." class="figure mx-auto d-block"><div class="figcaption">What the OneDrive authorisation currently
+returns on the Pomona tenant.</div>
+</figure><div class="section level2">
+<h2 id="deciding-between-box-and-onedrive">Deciding Between Box and OneDrive<a class="anchor" aria-label="anchor" href="#deciding-between-box-and-onedrive"></a>
+</h2>
 <p>Use OneDrive with rclone if you:</p>
 <ul>
 <li>Want <strong>personal control</strong> over cloud storage</li>
@@ -1576,6 +1585,7 @@ available?</li>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -2067,7 +2077,7 @@ Box</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The dry-run should show:</p>
 <pre><code>2026/03/05 15:10:22 INFO  : file1.txt: Copied (dry run)
@@ -2117,7 +2127,7 @@ Box</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The dry-run should show both files being copied from Box to OneDrive.
 After executing:</p>
@@ -2414,7 +2424,7 @@ differently?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Each command shows different information:</p>
 <p><code>rclone ls</code> – lists <strong>files only</strong> with
@@ -2474,7 +2484,7 @@ the empty folder too, use <code>rclone purge</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The dry-run should show files that would be deleted:</p>
 <pre><code>2026/03/05 15:20:15 INFO  : file1.txt: Deleted (dry run)
@@ -2510,7 +2520,7 @@ them</li>
 </div>
 </section></section><section id="aio-07-syncing-basics"><p>Content from <a href="07-syncing-basics.html">Syncing Basics</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/07-syncing-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2551,7 +2561,9 @@ them</li>
 <section><h2 class="section-heading" id="copy-vs-sync-the-critical-difference">Copy vs Sync: The Critical Difference<a class="anchor" aria-label="anchor" href="#copy-vs-sync-the-critical-difference"></a>
 </h2>
 <hr class="half-width">
-<div id="callout1" class="callout">
+<figure><img src="fig/03-copy-vs-sync.png" alt="Two panels comparing rclone copy and rclone sync. Copy adds and updates files at the destination and never deletes anything, so it is safe by default. Sync makes the destination match the source exactly and deletes anything at the destination that is not in the source. A warning advises always doing a dry run of a sync first." class="figure mx-auto d-block"><div class="figcaption">copy only adds; sync will delete to make the
+destination match.</div>
+</figure><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -2661,7 +2673,7 @@ After sync:
 </section><section><h2 class="section-heading" id="workflow-1-backing-up-hpc-results-to-box">Workflow 1: Backing Up HPC Results to Box<a class="anchor" aria-label="anchor" href="#workflow-1-backing-up-hpc-results-to-box"></a>
 </h2>
 <hr class="half-width">
-<p>You run a 3-day simulation on Sagehen that produces results in
+<p>You run a 3-day simulation on Sagehen HPC that produces results in
 <code>/scratch/results/</code>. You want to <strong>backup these results
 to Box</strong> before they age out of <code>/scratch</code>.</p>
 <div class="section level3">
@@ -2826,7 +2838,7 @@ file must never delete the only remaining copy – it is dangerous:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>After modifying the file and syncing again, verify with:</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -2876,7 +2888,7 @@ with Sync</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The dry-run with <code>-vv</code> should show:</p>
 <pre><code>2026/03/05 16:10:00 INFO  : delete.txt: Deleted (dry run)</code></pre>
@@ -2913,7 +2925,7 @@ dangerous mistake</li>
 </div>
 </section></section><section id="aio-08-advanced-sync-workflows"><p>Content from <a href="08-advanced-sync-workflows.html">Advanced Sync Workflows</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/08-advanced-sync-workflows.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2956,7 +2968,7 @@ for selective syncing</li>
 </h2>
 <hr class="half-width">
 <p>A collaborator has shared a large dataset on OneDrive. Download it to
-Sagehen for processing:</p>
+Sagehen HPC for processing:</p>
 <p>This example uses a second remote named
 <code>collaborator-onedrive</code> – configured with the same
 <code>rclone config</code> process as Episode 3, choosing
@@ -3473,7 +3485,7 @@ remove the test job from crontab.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>After waiting 5 minutes, check:</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -3520,7 +3532,7 @@ failures early</li>
 </div>
 </section></section><section id="aio-10-slurm-integration"><p>Content from <a href="10-slurm-integration.html">SLURM Integration</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/10-slurm-integration.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3574,7 +3586,9 @@ without any human intervention.</p>
 teammates expect new data to land in a shared Box folder on a known
 schedule, and for long sweeps where you need to start the next
 experiment as soon as the previous results are safely uploaded.</p>
-</section><section><h2 class="section-heading" id="post-job-upload">Post-Job Upload<a class="anchor" aria-label="anchor" href="#post-job-upload"></a>
+<figure><img src="fig/04-post-job-upload.png" alt="Four steps at the end of a job: the job finishes, rclone copies results to Box, rclone check verifies the transfer, and only then is /scratch cleaned up. A note explains that verifying first matters because if the check fails the results are still on /scratch, but only until that node is reused." class="figure mx-auto d-block"><div class="figcaption">Upload, verify, then clean up — in that
+order.</div>
+</figure></section><section><h2 class="section-heading" id="post-job-upload">Post-Job Upload<a class="anchor" aria-label="anchor" href="#post-job-upload"></a>
 </h2>
 <hr class="half-width">
 <p>You can have rclone upload results automatically after a SLURM job
@@ -3670,11 +3684,11 @@ reuse it across pipelines.</p>
 <div id="bandwidth-and-rclone" class="callout-inner">
 <h3 class="callout-title">Bandwidth and rclone</h3>
 <div class="callout-content">
-<p>The Sagehen connection to Box and OneDrive is fast (typically 100+
-MB/s for large files), but small-file transfers spend most of their time
-on per-file overhead. If your pipeline output is a directory of 10,000
-small files, transfer time will be dominated by HTTP round-trips, not
-raw bandwidth.</p>
+<p>The Sagehen HPC connection to Box and OneDrive is fast (typically
+100+ MB/s for large files), but small-file transfers spend most of their
+time on per-file overhead. If your pipeline output is a directory of
+10,000 small files, transfer time will be dominated by HTTP round-trips,
+not raw bandwidth.</p>
 <p>Two mitigations:</p>
 <p>Pack small files into a tarball before upload:
 <code>tar czf results.tar.gz /scratch/output</code>, then
@@ -4133,7 +4147,7 @@ information for both?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>For valid tokens, you should see storage info for each:</p>
 <pre><code>Checking Box token...
@@ -4184,7 +4198,7 @@ An expired token is not a problem – renew it with
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>During the reconnect, you should see:</p>
 <pre><code>NOTICE: AUTHORIZATION REQUIRED
@@ -4221,7 +4235,7 @@ expire</li>
 <!-- highlight <labname>/<myusername> placeholders in code blocks; remove if the varnish theme handles this natively -->
 <script>(function(){var CSS='.sh-placeholder{color:#c2410c;font-weight:700}[data-bs-theme="dark"] .sh-placeholder,html.dark .sh-placeholder{color:#fdba74}@media (prefers-color-scheme: dark){[data-bs-theme="auto"] .sh-placeholder{color:#fdba74}}';var RX=/<labname>|<myusername>/g;function firstMatch(el){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],full='';while(w.nextNode()){nodes.push({n:w.currentNode,s:full.length});full+=w.currentNode.nodeValue;}RX.lastIndex=0;var m;while((m=RX.exec(full))){var s=m.index,e=s+m[0].length,inSpan=false,parts=[];for(var j=0;j<nodes.length;j++){var ns=nodes[j].s,ne=ns+nodes[j].n.nodeValue.length;if(ne<=s||ns>=e)continue;parts.push({node:nodes[j].n,a:Math.max(s-ns,0),b:Math.min(e-ns,nodes[j].n.nodeValue.length)});var p=nodes[j].n.parentNode;while(p&&p!==el){if(p.classList&&p.classList.contains('sh-placeholder')){inSpan=true;break;}p=p.parentNode;}}if(!inSpan&&parts.length)return parts;}return null;}function wrapParts(parts){for(var i=parts.length-1;i>=0;i--){var t=parts[i].node,txt=t.nodeValue,a=parts[i].a,b=parts[i].b;var span=document.createElement('span');span.className='sh-placeholder';span.textContent=txt.slice(a,b);var f=document.createDocumentFragment();if(a>0)f.appendChild(document.createTextNode(txt.slice(0,a)));f.appendChild(span);if(b<txt.length)f.appendChild(document.createTextNode(txt.slice(b)));t.parentNode.replaceChild(f,t);}}function run(){var st=document.createElement('style');st.textContent=CSS;document.head.appendChild(st);document.querySelectorAll('pre,code').forEach(function(el){var guard=0,parts;while((parts=firstMatch(el))&&guard++<500){wrapParts(parts);}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script></section></section><section id="aio-12-troubleshooting-best-practices"><p>Content from <a href="12-troubleshooting-best-practices.html">Troubleshooting and Best Practices</a></p>
 <hr>
-<p>Last updated on 2026-08-24 |
+<p>Last updated on 2026-08-27 |
 
         <a href="https://github.com/Pomona-College/hpc-cloud-storage-rclone/edit/main/episodes/12-troubleshooting-best-practices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4284,7 +4298,7 @@ forwarding, then retry.</p>
 <p><strong>Cause:</strong> You’re running the command on a different
 machine than where you set it up.</p>
 <p><strong>Solution:</strong> Run <code>rclone config</code> on Sagehen
-with port forwarding <code>-L 53682:localhost:53682</code>.</p>
+HPC with port forwarding <code>-L 53682:localhost:53682</code>.</p>
 </div>
 <div class="section level3">
 <h3 id="rclone-command-not-found">“rclone: command not found”<a class="anchor" aria-label="anchor" href="#rclone-command-not-found"></a>
@@ -4584,8 +4598,8 @@ rclone.org/docs for rclone documentation</li>
   "url": "https://pomona-college.github.io/hpc-cloud-storage-rclone/aio.html",
   "identifier": "https://pomona-college.github.io/hpc-cloud-storage-rclone/aio.html",
   "dateCreated": "2026-03-05",
-  "dateModified": "2026-08-26",
-  "datePublished": "2026-08-26"
+  "dateModified": "2026-08-27",
+  "datePublished": "2026-08-27"
 }
 
   </script><script>
